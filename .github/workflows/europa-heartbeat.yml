@@ -2,7 +2,7 @@ name: Winter in Europa Supabase ping
 on:
   schedule:
     - cron: "0 0 * * 1"
-  - cron: "0 0 * * 4"
+    - cron: "0 0 * * 4"
   workflow_dispatch:
 jobs:
   ping:
