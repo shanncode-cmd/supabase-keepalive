@@ -1,0 +1,13 @@
+name: Notes from Elsewhere Supabase ping
+on:
+  schedule:
+    - cron: "0 0 * * 2"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase health check
+        run: |
+          curl -X GET "https://rmllxnktkoqbggsneezk.supabase.co/rest/v1/" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY_NOTES_ELSEWHERE }}"
