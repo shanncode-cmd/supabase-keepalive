@@ -1,0 +1,14 @@
+name: Winter in Europa Supabase ping
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  - cron: "0 0 * * 4"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase health check
+        run: |
+          curl -X GET "https://YOUR_EUROPA_PROJECT_ID.supabase.co/rest/v1/" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY_EUROPA }}"
